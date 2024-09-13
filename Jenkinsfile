@@ -27,7 +27,7 @@ pipeline {
         stage('Push Docker Images') {
             steps {
                 script {
-                    withDockerRegistry([credentialsId: "docker-hub-crendential", url: '']) {
+                    withDockerRegistry([credentialsId: "${DOCKER_REGISTRY_CREDENTIALS}", url: 'https://index.docker.io/v1/']) {
                         sh 'docker push ${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}-frontend:latest'
                         sh 'docker push ${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}-backend:latest'
                         sh 'docker push ${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}-mysql:latest'

@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKER_IMAGE_NAME = 'phone-shop'
         DOCKER_REGISTRY = 'freyda24'
-        DOCKER_REGISTRY_CREDENTIALS = 'docker-token'
+        DOCKER_REGISTRY_CREDENTIALS = 'docker-hub-credentials'
     }
 
     stages {

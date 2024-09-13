@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKER_IMAGE_NAME = 'phone-shop'
         DOCKER_REGISTRY = 'freyda24'
-        DOCKER_REGISTRY_CREDENTIALS = 'docker-tocken'
+        DOCKER_REGISTRY_CREDENTIALS = 'docker-token'
     }
 
     stages {
@@ -27,7 +27,7 @@ pipeline {
         stage('Push Docker Images') {
             steps {
                 script {
-                    withDockerRegistry([credentialsId: "${DOCKER_REGISTRY_CREDENTIALS}", url: 'https://hub.docker.com/']) {
+                    withDockerRegistry([credentialsId: "${DOCKER_REGISTRY_CREDENTIALS}", url: '']) {
                         sh 'docker push ${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}-frontend:latest'
                         sh 'docker push ${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}-backend:latest'
                         sh 'docker push ${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}-mysql:latest'

@@ -17,9 +17,9 @@ pipeline {
         stage('Build Docker Images') {
             steps {
                 script {
-                    sh 'docker build -t ${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}-frontend:latest ./frontend'
-                    sh 'docker build -t ${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}-backend:latest ./backend'
-                    sh 'docker build -t ${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}-mysql:latest ./mysql'
+                    sh 'docker build -t ${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}-frontend:latest ./client'
+                    sh 'docker build -t ${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}-backend:latest ./server'
+                    sh 'docker build -t ${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}-mysql:latest ./mysql-data'
                 }
             }
         }

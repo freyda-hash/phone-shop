@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE_NAME = 'phone-shop'
-        DOCKER_REGISTRY = 'freyda24'
-        DOCKER_REGISTRY_CREDENTIALS = 'docker-hub-credentials'
+        DOCKER_IMAGE_NAME = 
+        DOCKER_REGISTRY = 
+        DOCKER_REGISTRY_CREDENTIALS = 
     }
 
     stages {
